@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Subscription Plans</h1>
+    <div class="container">
+        <div class="p1">
+            <p>Basic</p>
+            <br>
+            <p>$3.99</p>
+            <br>
+            <p>100</p> 
+            <br>
+            <p>1000</p> 
+            <br>
+            <p>10</p> 
+            <br>
+            <p>Jan, Aug</p>
+            <a href="form.html">
+                <button>Select</button>
+            </a>
+            
+        </div>
+        <div class="p2">
+            <p>Professional</p>
+            <br>
+            <p>$5.99</p>
+            <br>
+            <p>500</p> 
+            <br>
+            <p>5000</p> 
+            <br>
+            <p>50</p> 
+            <br>
+            <p>Jan, Aug, Dec</p>
+            <a href="form2.html">
+                <button>Select</button>
+            </a>
+        </div>
+        <div class="p3">
+            <p>Ultimate</p>
+            <br>
+            <p>$9.99</p>
+            <br>
+            <p>2000</p> 
+            <br>
+            <p>20000</p> 
+            <br>
+            <p>500</p> 
+            <br>
+            <p>Jan, Aug</p>
+            <a href="form3.html">
+                <button>Select</button>
+            </a>
+        </div>
+    </div>
+    <script>
+        class Plan
+        {
+            constructor(name, price, space, transfer,pages, discountmouths)
+            {
+                this.name = name;
+                this.price = price;
+                this.space = space;
+                this.transfer = transfer;
+                this.pages = pages;
+                this.discountMonths = discountmouths;
+            }
+            calcAnnual(percentIfDisc)
+            {
+                var bestPrice = this.price;
+                alert("Price " + bestPrice);
+                var currDate = new Date();
+                console.log("Current Date " +currDate);
+                var thisMo = currDate.getMonth();
+                console.log("This Month " +thisMo);
+                for (var i = 0; i < this.discountMonths.length; i++)
+                {
+                    console.log(this.discountMonths.length);
+                    if (this.discountMonths[i] === thisMo)
+                    {
+                        bestPrice = this.price * percentIfDisc;
+                        alert("Price after discount " + bestPrice);
+                        break;
+                    }
+                }
+                return bestPrice * 12;
+                alert("Price with no disount " + bestPrice);
+            }
+        }
+        var p1 = new Plan("Basic",3.99, 100,1000,10, [0, 7]);
+        var p2 = new Plan("Professional",5.99, 500,5000,50, [0, 7, 11]);
+        var p3 = new Plan("Ultimate",9.99, 2000,20000,500, [0, 7]);
+    </script>
+</body>
+</html>

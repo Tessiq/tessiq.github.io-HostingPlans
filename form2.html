@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Basic Plan</h1>
+    <br>
+    <form>
+        <div id="five"></div>
+        <label for="fname">First name:</label>
+        <br>
+        <input type="text" id="fname" name="fname" placeholder="John" required>
+        <br>
+        <label for="lname">Last name:</label>
+        <br>
+        <input type="text" id="lname" name="lname" placeholder="Doe" required>
+        <br>
+        <label for="email">Email:</label>
+        <br>
+        <input type="email" id="email" name="email" placeholder="example@gmail.com" required>
+        <br>
+        <label for="date">Date:</label>
+        <br>
+        <p id="four"></p>
+        <div class="container">
+            <div class="p4">
+                <p id="one"></p>
+                <br>
+                <p id="two"></p>
+                <br>
+                <p id="three"></p>
+            </div>
+        </div>
+        <input type="submit" value="Subscribe">
+    </form>
+
+    <script>
+        class Plan
+        {
+            constructor(name, price, space, transfer,pages, discountmouths)
+            {
+                this.name = name;
+                this.price = price;
+                this.space = space;
+                this.transfer = transfer;
+                this.pages = pages;
+                this.discountMonths = discountmouths;
+            }
+            calcAnnual(percentIfDisc)
+            {
+                var bestPrice = this.price;
+                document.getElementById('one').innerHTML = ("Price without discount $" + bestPrice);
+                var currDate = new Date();
+                document.getElementById('four').innerHTML = (currDate);
+                var thisMo = currDate.getMonth();
+                console.log("This Month " +thisMo);
+                for (var i = 0; i < this.discountMonths.length; i++)
+                {
+                    console.log(this.discountMonths.length);
+                    if (this.discountMonths[i] === thisMo)
+                    {
+                        bestPrice = this.price * percentIfDisc;
+                        document.getElementById('two').innerHTML = ("Price with discount $" + Math.round(bestPrice));
+                        break;
+                    }
+                }
+                return bestPrice * 12;
+                document.getElementById('three').innerHTML = ("Price with no disount $" + Math.round(bestPrice));
+            }
+        }
+        var p1 = new Plan("Basic",3.99, 100,1000,10, [0, 7]);
+        var p2 = new Plan("Professional",5.99, 500,5000,50, [0, 7, 11]);
+        var p3 = new Plan("Ultimate",9.99, 2000,20000,500, [0, 7]);
+        var annualPrice = p3.calcAnnual(.80);
+        document.getElementById('three').innerHTML = ("The Annual Price is $" + Math.round(annualPrice));
+    </script>
+</body>
+</html>

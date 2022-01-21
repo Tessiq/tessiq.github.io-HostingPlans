@@ -1,0 +1,71 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    padding: 1%;
+    background-image: url(Images/2089151.jpg);
+}
+button{
+    font-size: 50%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+h1{
+    text-align: center;
+    color: white;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    padding: 5%;
+    text-align: center;
+    font-size: 200%;
+    color: white;
+}
+.p1{
+    margin-right: 20%;
+    border: 3px solid black;
+    padding: 1%;
+    border-radius: 10px;
+}
+.p2{
+    border: 3px solid black;
+    padding: 1%;
+    border-radius: 10px;
+}
+.p3{
+    margin-left: 20%;
+    border: 3px solid black;
+    padding: 1%;
+    border-radius: 10px;
+}
+.p4{
+    padding: 3%;
+}
+form {
+    text-align: center;
+    font-size: 150%;
+    color: white;
+    background-color: grey;
+    margin-left: 20%;
+    margin-right: 20%;
+    border-radius: 10px;
+    padding: 2%;
+}
+form input{
+    padding: .8%;
+    width: 80%;
+}
+form label{
+    padding: 80px;
+    font-size: 110%;
+}
+#four{
+    font-size: 120%;
+}
+#three{
+    font-size: 120%;
+}
